@@ -3,9 +3,9 @@
 class EmojiCard : public Card
 {
 public:
+	//position and vlaue of the card (value based on emoji)
 	EmojiCard(float x, float y, int value);
-	void draw_face(sf::RenderWindow);
-
-private:
+	//creates face value of card
+	void draw_face(sf::RenderWindow& e_window);
 
 };

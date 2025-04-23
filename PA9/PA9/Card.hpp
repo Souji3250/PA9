@@ -16,17 +16,21 @@ public:
     virtual ~Card() = default;
 
     // Setters
+    void setXValue(float x);
+    void setYValue(float y);
     void setPosition(float x, float y);
     void setFaceUp(bool faceUp);
     void setMatched(bool matched);
     void setValue(int value);
 
     // Getters
+    float getXValue() const;
+    float getYValue() const;
     Vector2f getPosition() const;
     int getValue() const;
     bool getFaceUp() const;
     bool getMatched() const;
-    FloatRect getBounds() const;
+    FloatRect cardBounds() const;
 
     virtual void draw(RenderWindow& window);
     virtual void drawCardFace(RenderWindow& window) = 0;

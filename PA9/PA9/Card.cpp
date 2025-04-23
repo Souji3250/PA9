@@ -1,7 +1,7 @@
 #include "Card.hpp"
 
 
-Card::Card(float x, float y, int value): mPosition(x, y), mValue(value), mFaceUp(false), mMatched(false) 
+Card::Card(float x, float y, int value): mPosition(x, y), mValue(value), mFaceUp(false), mMatched(false) // setting the default values of the members
 {
     mShape.setSize(Vector2f(100, 150));//sets the size of the card
     mShape.setPosition(mPosition);//sets the position to whatever mPosition is 
@@ -12,10 +12,26 @@ Card::Card(float x, float y, int value): mPosition(x, y), mValue(value), mFaceUp
 
 // Setters
 
-//function for setting position
-void Card::setPosition(float x, float y) 
+//function for setting the x value
+
+void Card::setXValue(float x)
 {
-    mPosition = { x, y };
+    mPosition.x = x;
+}
+
+//function for setting the y value
+void Card::setYValue(float y)
+{
+    mPosition.y = y;
+}
+
+//function for setting the y value
+
+
+//function for setting position
+void Card::setPosition(float x, float y)
+{
+    mPosition = {x,y};
     mShape.setPosition(mPosition);
 }
 
@@ -31,6 +47,7 @@ void Card::setMatched(bool matched)
     mMatched = matched;
     if (mMatched) //if card is matched then this loop will run
     {
+        //when card is matched the card face turns green 
         mShape.setFillColor(Color::Green);
     }
 }
@@ -41,6 +58,20 @@ void Card::setValue(int value)
 }
 
 // Getters
+
+//function for getting the X vlaue
+
+float Card::getXValue() const
+{
+    return mPosition.x;
+}
+
+//function for getting the Y value
+float Card::getYValue() const
+{
+    return mPosition.y;
+}
+
 
 //function for getting the position
 Vector2f Card::getPosition() const 
@@ -67,7 +98,7 @@ bool Card::getMatched() const
 }
 
 //function for getting the bounds of the card
-FloatRect Card::getBounds() const 
+FloatRect Card::cardBounds() const 
 {
     return mShape.getGlobalBounds();
 }

@@ -195,6 +195,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.hpp" />
+    <ClInclude Include="EmojiCard.hpp" />
+    <ClInclude Include="Game.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -28,7 +28,7 @@ public:
 
 private:
     //vector to help store each card in the game
-    vector<unique_ptr<Card>> m_cards;
+    vector<Card> m_cards;
     //pointers to track the players choices
     Card* m_first_choice;
     Card* m_second_choice;
